@@ -128,5 +128,89 @@
     "conversion": "Original PNG embedded byte for byte; only the Training legend text is covered and relabeled Fitting with vector text. Plot data and geometry are unchanged.",
     "font": "DejaVu Sans, embedded",
     "sha256": "a0c005840721ce65504ab57dce6d8cd51b00341063def8703b8b3986069324d5"
+  },
+  {
+    "file": "assets/coffee-web.gif",
+    "source": "assets/coffee.gif",
+    "source_sha256": "8869b115853000734cc8dd5f9eb0e2bef60c7e5b0c6aa1131c04f9973df83fb2",
+    "conversion": "GIF for web playback. Reduced resolution, frame rate, and palette.",
+    "duration_seconds": 15.67,
+    "frames": 94,
+    "width": 360,
+    "height": 203,
+    "loop": 0,
+    "sha256": "05a22f7a9e8f571434ecbc39cd7a3a6da88a06ece4c319986a7b43eb7f705b91"
+  },
+  {
+    "file": "assets/data-attribution-web.gif",
+    "source": "assets/data-attribution.gif",
+    "source_sha256": "c0a76678891822d0c5961b07a3e9d2822e13246cbc739cfa205b9c8fca44a545",
+    "conversion": "GIF for web playback. Reduced resolution, frame rate, and palette.",
+    "duration_seconds": 40.4,
+    "frames": 202,
+    "width": 800,
+    "height": 700,
+    "loop": 0,
+    "sha256": "3c4c6de3ad9123091aa2b015fadf250220c632727bf2d201f9f263b2c161ffac"
+  },
+  {
+    "file": "assets/drawer-web.gif",
+    "source": "assets/drawer.gif",
+    "source_sha256": "0aeb2e2fc3387ba3eb2b471c9657105829bd59c72659f3fee4a4af80c8f1bec8",
+    "conversion": "GIF for web playback. Reduced resolution, frame rate, and palette.",
+    "duration_seconds": 33.17,
+    "frames": 199,
+    "width": 360,
+    "height": 203,
+    "loop": 0,
+    "sha256": "ced9724b8a97e348bda13e17254aa540703244073932117731318cc0f85c7e42"
+  },
+  {
+    "file": "assets/drone-figure-eight-web.gif",
+    "source": "assets/drone-figure-eight.gif",
+    "source_sha256": "3f52cabf480a2f45118eaddcf79cc69ba42011802c0a1766b5306ff5092c7ffe",
+    "conversion": "GIF for web playback. Reduced resolution, frame rate, and palette.",
+    "duration_seconds": 102.0,
+    "frames": 510,
+    "width": 320,
+    "height": 180,
+    "loop": 0,
+    "sha256": "6e993eadd7918c8a84c7a54c1cdc249857ef52a6a6ca98755d0488f92791f9b7"
+  },
+  {
+    "file": "assets/drone-loop-web.gif",
+    "source": "assets/drone-loop.gif",
+    "source_sha256": "8ddb98d715c66d3c6cf1bbefaa7bf350bade579f13e52de60bdc0880c4fc8161",
+    "conversion": "GIF for web playback. Reduced resolution, frame rate, and palette.",
+    "duration_seconds": 19.0,
+    "frames": 114,
+    "width": 360,
+    "height": 203,
+    "loop": 0,
+    "sha256": "fc08cd73e7ac3bbeece9edd03d98bdde83317b97c111d77a043639e0d9cca644"
+  },
+  {
+    "file": "assets/switch-bpc-web.gif",
+    "source": "assets/switch-bpc.gif",
+    "source_sha256": "ff78a46402dd988690c38fa4e711ec99925f9a59c90ed254f90322ec0d341b9e",
+    "conversion": "GIF for web playback. Reduced resolution, frame rate, and palette.",
+    "duration_seconds": 12.67,
+    "frames": 76,
+    "width": 360,
+    "height": 203,
+    "loop": 0,
+    "sha256": "3a258050bd2f4cc19271fdc64080a0d135ed085a85541e7d46534f8b9eda732d"
+  },
+  {
+    "file": "assets/switch-pi05-web.gif",
+    "source": "assets/switch-pi05.gif",
+    "source_sha256": "34dbb4aabcbb9fd4c4783bdedd8831b7644546b17329dbbc0949feba0b1d61ac",
+    "conversion": "GIF for web playback. Reduced resolution, frame rate, and palette.",
+    "duration_seconds": 20.84,
+    "frames": 125,
+    "width": 360,
+    "height": 203,
+    "loop": 0,
+    "sha256": "bbf1bbb34da3bf7fd73a18d1f6f7468898827ac9aae6dd0557c815490ce91140"
   }
 ]

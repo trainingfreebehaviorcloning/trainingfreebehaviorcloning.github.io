@@ -12,9 +12,9 @@
   <meta property="og:url" content="https://trainingfreebehaviorcloning.github.io/">
   <meta property="og:image" content="https://trainingfreebehaviorcloning.github.io/assets/method-slide.png">
   <link rel="canonical" href="https://trainingfreebehaviorcloning.github.io/">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=82e5166c9fbe">
-  <script src="script.js?v=e3038a76b8ab" defer></script>
+  <link rel="icon" href="assets/favicon.svg?v=7c495b019fab" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=8e044fcbcf65">
+  <script src="script.js?v=7b5c9fa5363a" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -55,11 +55,11 @@
       <p class="teaser-subtitle">Behavior cloning by interpolating expert demonstrations.</p>
       <div class="hero-demos">
         <figure>
-          <picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/drone-loop.jpg"><img id="teaser-drone" class="demo-animation" src="assets/drone-loop.gif" width="480" height="270" loading="eager" decoding="async" alt="Short BPC drone navigation demonstration"></picture>
+          <picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/drone-loop.jpg?v=9f8605bd7ab7"><img id="teaser-drone" class="demo-animation" src="assets/drone-loop-web.gif" width="360" height="203" style="--demo-poster: url(assets/drone-loop.jpg?v=9f8605bd7ab7)" loading="eager" decoding="async" alt="Short BPC drone navigation demonstration"></picture>
           <!-- <figcaption>Drone navigation <span>19-second loop</span></figcaption> -->
         </figure>
         <figure>
-          <picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/coffee.jpg"><img id="teaser-arm" class="demo-animation" src="assets/coffee.gif" width="480" height="270" loading="eager" decoding="async" alt="Short BPC tabletop manipulation demonstration"></picture>
+          <picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/coffee.jpg?v=fb8f7f4b1c2c"><img id="teaser-arm" class="demo-animation" src="assets/coffee-web.gif" width="360" height="203" style="--demo-poster: url(assets/coffee.jpg?v=fb8f7f4b1c2c)" loading="eager" decoding="async" alt="Short BPC tabletop manipulation demonstration"></picture>
           <!-- <figcaption>Tabletop manipulation <span>16-second loop</span></figcaption> -->
         </figure>
       </div>
@@ -87,8 +87,8 @@
         <p class="section-intro">BPC retrieves demonstration segments, combines their future actions, and applies a residual correction at each control step.</p>
         <figure class="method-figure">
           <div class="method-diagram" role="group" aria-label="Interactive BPC method diagram">
-            <img src="assets/method-slide.png" srcset="assets/method-slide.png 1920w, assets/method-slide@2x.png 3840w" sizes="(max-width: 520px) calc(100vw - 26px), (max-width: 1040px) calc(100vw - 56px), 984px" alt="BPC method diagram: retrieve demonstration segments using images, proprioception, and past actions; combine their future actions; and add a residual correction using pooled random Fourier features." width="1920" height="1080" loading="lazy">
-            <div class="method-diagram-title" aria-hidden="true"><img src="assets/method-slide.png" srcset="assets/method-slide.png 1920w, assets/method-slide@2x.png 3840w" sizes="(max-width: 520px) calc(100vw - 26px), (max-width: 1040px) calc(100vw - 56px), 984px" alt="" width="1920" height="1080" loading="lazy"></div>
+            <img src="assets/method-slide.png?v=0259b15d6887" srcset="assets/method-slide.png?v=0259b15d6887 1920w, assets/method-slide@2x.png?v=456af7c6d026 3840w" sizes="(max-width: 520px) calc(100vw - 26px), (max-width: 1040px) calc(100vw - 56px), 984px" alt="BPC method diagram: retrieve demonstration segments using images, proprioception, and past actions; combine their future actions; and add a residual correction using pooled random Fourier features." width="1920" height="1080" loading="lazy">
+            <div class="method-diagram-title" aria-hidden="true"><img src="assets/method-slide.png?v=0259b15d6887" srcset="assets/method-slide.png?v=0259b15d6887 1920w, assets/method-slide@2x.png?v=456af7c6d026 3840w" sizes="(max-width: 520px) calc(100vw - 26px), (max-width: 1040px) calc(100vw - 56px), 984px" alt="" width="1920" height="1080" loading="lazy"></div>
             <svg class="method-highlights" viewBox="0 0 1920 1080" aria-hidden="true" focusable="false">
               <defs>
                 <filter id="method-area-glow" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="9"/></filter>
@@ -139,7 +139,7 @@
         <h2>Action attribution</h2>
         <p class="section-intro">BPC retains the retrieved demonstration segments and the coefficients used to combine them.</p>
         <figure class="attribution-figure">
-          <picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/data-attribution.jpg"><img class="demo-animation" src="assets/data-attribution.gif" width="1600" height="1400" loading="lazy" decoding="async" alt="Data attribution for Loop and Figure-eight drone flights"></picture>
+          <picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/data-attribution.jpg?v=5c0085669f63"><img class="demo-animation" src="assets/data-attribution-web.gif" width="800" height="700" style="--demo-poster: url(assets/data-attribution.jpg?v=5c0085669f63)" loading="lazy" decoding="async" alt="Data attribution for Loop and Figure-eight drone flights"></picture>
           <figcaption>Retrieved demonstration segments, flown paths, and predicted references for Loop and Figure-eight flights.</figcaption>
         </figure>
       </div>
@@ -153,34 +153,34 @@
           <h3>Tabletop manipulation</h3>
           <p class="subsection-intro">Coffee, Drawer, and Switch tasks on a UFactory xArm6.</p>
           <div class="demo-grid">
-            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/coffee.jpg"><img class="demo-animation" src="assets/coffee.gif" width="480" height="270" loading="lazy" decoding="async" alt="BPC Coffee task hardware demonstration"></picture><figcaption>Coffee</figcaption></figure>
-            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/drawer.jpg"><img class="demo-animation" src="assets/drawer.gif" width="480" height="270" loading="lazy" decoding="async" alt="BPC Drawer task hardware demonstration"></picture><figcaption>Drawer</figcaption></figure>
+            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/coffee.jpg?v=fb8f7f4b1c2c"><img class="demo-animation" src="assets/coffee-web.gif" width="360" height="203" style="--demo-poster: url(assets/coffee.jpg?v=fb8f7f4b1c2c)" loading="lazy" decoding="async" alt="BPC Coffee task hardware demonstration"></picture><figcaption>Coffee</figcaption></figure>
+            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/drawer.jpg?v=8c78f2da4a25"><img class="demo-animation" src="assets/drawer-web.gif" width="360" height="203" style="--demo-poster: url(assets/drawer.jpg?v=8c78f2da4a25)" loading="lazy" decoding="async" alt="BPC Drawer task hardware demonstration"></picture><figcaption>Drawer</figcaption></figure>
           </div>
-          <figure class="original-figure hardware-figure"><a href="assets/hardware-manipulation.png" target="_blank" rel="noopener" aria-label="Open the full-size hardware manipulation results"><img src="assets/hardware-manipulation.png" width="1690" height="1402" loading="lazy" alt="Coffee, Drawer, and Switch sequences. BPC succeeds in 36, 38, and 34 out of 40 trials, compared with 39, 40, and 8 for pi 0.5."></a><figcaption>Successes in 40 trials per task. BPC and π<sub>0.5</sub> use the same demonstrations.</figcaption></figure>
+          <figure class="original-figure hardware-figure"><a href="assets/hardware-manipulation.png?v=2126cdf97ea0" target="_blank" rel="noopener" aria-label="Open the full-size hardware manipulation results"><img src="assets/hardware-manipulation.png?v=2126cdf97ea0" width="1690" height="1402" loading="lazy" alt="Coffee, Drawer, and Switch sequences. BPC succeeds in 36, 38, and 34 out of 40 trials, compared with 39, 40, and 8 for pi 0.5."></a><figcaption>Successes in 40 trials per task. BPC and π<sub>0.5</sub> use the same demonstrations.</figcaption></figure>
           <h4>Switch task</h4>
           <p class="subsection-intro">The robot must place the bag on the plate opposite its starting position. This requires remembering which plate the bag came from.</p>
           <div class="demo-grid">
-            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/switch-bpc.jpg"><img class="demo-animation" src="assets/switch-bpc.gif" width="480" height="270" loading="lazy" decoding="async" alt="BPC on the Switch task"></picture><figcaption>BPC</figcaption></figure>
-            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/switch-pi05.jpg"><img class="demo-animation" src="assets/switch-pi05.gif" width="480" height="270" loading="lazy" decoding="async" alt="Pi 0.5 on the Switch task"></picture><figcaption>π<sub>0.5</sub></figcaption></figure>
+            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/switch-bpc.jpg?v=62c67e1f166e"><img class="demo-animation" src="assets/switch-bpc-web.gif" width="360" height="203" style="--demo-poster: url(assets/switch-bpc.jpg?v=62c67e1f166e)" loading="lazy" decoding="async" alt="BPC on the Switch task"></picture><figcaption>BPC</figcaption></figure>
+            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/switch-pi05.jpg?v=f75d7422728d"><img class="demo-animation" src="assets/switch-pi05-web.gif" width="360" height="203" style="--demo-poster: url(assets/switch-pi05.jpg?v=f75d7422728d)" loading="lazy" decoding="async" alt="Pi 0.5 on the Switch task"></picture><figcaption>π<sub>0.5</sub></figcaption></figure>
           </div>
         </div>
         <div class="experiment-subsection">
           <h3>Drone navigation</h3>
           <p class="subsection-intro">Onboard control using raw-pixel observations.</p>
           <div class="demo-grid">
-            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/drone-loop.jpg"><img class="demo-animation" src="assets/drone-loop.gif" width="480" height="270" loading="lazy" decoding="async" alt="BPC drone Loop flight"></picture><figcaption>Loop (3 demonstrations)</figcaption></figure>
-            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/drone-figure-eight.jpg"><img class="demo-animation" src="assets/drone-figure-eight.gif" width="359" height="202" loading="lazy" decoding="async" alt="BPC drone Figure-eight flight"></picture><figcaption>Figure-eight (4 demonstrations)</figcaption></figure>
+            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/drone-loop.jpg?v=9f8605bd7ab7"><img class="demo-animation" src="assets/drone-loop-web.gif" width="360" height="203" style="--demo-poster: url(assets/drone-loop.jpg?v=9f8605bd7ab7)" loading="lazy" decoding="async" alt="BPC drone Loop flight"></picture><figcaption>Loop (3 demonstrations)</figcaption></figure>
+            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/drone-figure-eight.jpg?v=0a612be705f8"><img class="demo-animation" src="assets/drone-figure-eight-web.gif" width="320" height="180" style="--demo-poster: url(assets/drone-figure-eight.jpg?v=0a612be705f8)" loading="lazy" decoding="async" alt="BPC drone Figure-eight flight"></picture><figcaption>Figure-eight (4 demonstrations)</figcaption></figure>
           </div>
-          <figure class="original-figure"><a href="assets/drone-results.png" target="_blank" rel="noopener" aria-label="Open the full-size drone results"><img src="assets/drone-results.png" width="1678" height="404" loading="lazy" alt="Drone results. Loop: 10 of 10 successes, 0 collisions per metre, 0.095 metre demonstration-set distance, 3 demonstrations averaging 25.2 seconds. Figure-eight: 8 of 10 successes, 0.0108 collisions per metre, 0.109 metre distance, 4 demonstrations averaging 33.5 seconds."></a><figcaption>Results from 10 flights per task. See Table IV of the paper for the evaluation metrics.</figcaption></figure>
+          <figure class="original-figure"><a href="assets/drone-results.png?v=a0abe9dd3cea" target="_blank" rel="noopener" aria-label="Open the full-size drone results"><img src="assets/drone-results.png?v=a0abe9dd3cea" width="1678" height="404" loading="lazy" alt="Drone results. Loop: 10 of 10 successes, 0 collisions per metre, 0.095 metre demonstration-set distance, 3 demonstrations averaging 25.2 seconds. Figure-eight: 8 of 10 successes, 0.0108 collisions per metre, 0.109 metre distance, 4 demonstrations averaging 33.5 seconds."></a><figcaption>Results from 10 flights per task. See Table IV of the paper for the evaluation metrics.</figcaption></figure>
         </div>
         <div class="experiment-subsection">
           <h3>Simulation benchmarks</h3>
-          <figure class="original-figure"><a href="assets/simulation-tabletop.png" target="_blank" rel="noopener" aria-label="Open the full-size tabletop simulation results"><img src="assets/simulation-tabletop.png" width="1698" height="596" loading="lazy" alt="Simulation tabletop results across eight tasks, 300 rollouts per task. Mean success rates: SDP 76 percent, pi 0.5 77 percent, DARP 52 percent, BPC 73 percent."></a><figcaption>Tabletop manipulation (300 rollouts per task)</figcaption></figure>
-          <figure class="original-figure"><a href="assets/simulation-dexterous.png" target="_blank" rel="noopener" aria-label="Open the full-size dexterous manipulation results"><img src="assets/simulation-dexterous.png" width="1150" height="428" loading="lazy" alt="DexArt and Adroit results, 120 rollouts per task. BPC-3D means are 63 percent on DexArt and 70 percent on Adroit, compared with 67 and 75 for SDP-3D, and 64 and 62 for DARP-3D."></a><figcaption>DexArt and Adroit (120 rollouts per task)</figcaption></figure>
+          <figure class="original-figure"><a href="assets/simulation-tabletop.png?v=d9b33baf8d56" target="_blank" rel="noopener" aria-label="Open the full-size tabletop simulation results"><img src="assets/simulation-tabletop.png?v=d9b33baf8d56" width="1698" height="596" loading="lazy" alt="Simulation tabletop results across eight tasks, 300 rollouts per task. Mean success rates: SDP 76 percent, pi 0.5 77 percent, DARP 52 percent, BPC 73 percent."></a><figcaption>Tabletop manipulation (300 rollouts per task)</figcaption></figure>
+          <figure class="original-figure"><a href="assets/simulation-dexterous.png?v=0a7b6e6757d9" target="_blank" rel="noopener" aria-label="Open the full-size dexterous manipulation results"><img src="assets/simulation-dexterous.png?v=0a7b6e6757d9" width="1150" height="428" loading="lazy" alt="DexArt and Adroit results, 120 rollouts per task. BPC-3D means are 63 percent on DexArt and 70 percent on Adroit, compared with 67 and 75 for SDP-3D, and 64 and 62 for DARP-3D."></a><figcaption>DexArt and Adroit (120 rollouts per task)</figcaption></figure>
         </div>
         <div class="experiment-subsection">
           <h3>Fitting and inference cost</h3>
-          <figure class="original-figure" id="computation-figure"><a href="assets/computation-scaling-fitting.svg" target="_blank" rel="noopener" aria-label="Open the full-size computation scaling figure"><img src="assets/computation-scaling-fitting.svg" width="2600" height="1320" loading="lazy" alt="Fitting time, inference latency, and peak GPU memory over 200 to 200,000 demonstration windows, comparing BPC and pi 0.5 on an RTX 4090."></a><figcaption>Fitting time, inference latency, and peak GPU memory on an RTX 4090. Time is plotted on a logarithmic scale.</figcaption></figure>
+          <figure class="original-figure" id="computation-figure"><a href="assets/computation-scaling-fitting.svg?v=a0c005840721" target="_blank" rel="noopener" aria-label="Open the full-size computation scaling figure"><img src="assets/computation-scaling-fitting.svg?v=a0c005840721" width="2600" height="1320" loading="lazy" alt="Fitting time, inference latency, and peak GPU memory over 200 to 200,000 demonstration windows, comparing BPC and pi 0.5 on an RTX 4090."></a><figcaption>Fitting time, inference latency, and peak GPU memory on an RTX 4090. Time is plotted on a logarithmic scale.</figcaption></figure>
           <div class="timing-strip"><div><strong>30–120 s</strong><span>Manipulation policy fit on RTX 4090</span></div><div><strong>75 Hz</strong><span>Onboard control on Jetson Orin Nano</span></div></div>
         </div>
         <p class="source-note">Evaluation protocols and timing details appear in <a href="https://arxiv.org/html/2609.30134v1#S5" target="_blank" rel="noopener">Section V of the paper</a>. Click a figure to view it at full resolution.</p>
@@ -192,8 +192,8 @@
         <h2>Editing the demonstration bank</h2>
         <p class="section-intro">Removing demonstrations changes the predicted trajectory in the Square task.</p>
         <div class="edit-pair">
-          <figure><div class="image-label"><span class="dot original"></span> Original demonstration bank</div><img src="assets/bank-original.png" width="900" height="450" loading="lazy" alt="Original-bank continuation in the Square task, with the recorded nut path shown in green."></figure>
-          <figure><div class="image-label"><span class="dot edited"></span> Edited demonstration bank</div><img src="assets/bank-edited.png" width="900" height="450" loading="lazy" alt="Continuation after excluding demonstrations, with the new path shown in orange and original path dashed."></figure>
+          <figure><div class="image-label"><span class="dot original"></span> Original demonstration bank</div><img src="assets/bank-original.png?v=2f357a8c626c" width="900" height="450" loading="lazy" alt="Original-bank continuation in the Square task, with the recorded nut path shown in green."></figure>
+          <figure><div class="image-label"><span class="dot edited"></span> Edited demonstration bank</div><img src="assets/bank-edited.png?v=86489808c513" width="900" height="450" loading="lazy" alt="Continuation after excluding demonstrations, with the new path shown in orange and original path dashed."></figure>
         </div>
         <p class="edit-description">We removed 12 demonstrations while keeping the query, fitted modules, and normalizers fixed. Both rollouts succeed. The images show the same simulation step and camera view.</p>
       </div>

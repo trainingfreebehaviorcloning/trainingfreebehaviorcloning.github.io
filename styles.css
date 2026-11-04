@@ -43,3 +43,11 @@
 .method-tabs{margin-top:24px}
 @media(max-width:520px){.method-panel{padding:18px 16px}.method-tabs button{font-size:13px}}
 @media(forced-colors:active){.method-hotspot:focus-visible::after{background:Highlight}.method-panel{border-left-color:Highlight}}
+
+/* Show the still image in the GIF's frame while the animation loads. */
+.demo-media .demo-animation {
+  background-image: var(--demo-poster);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

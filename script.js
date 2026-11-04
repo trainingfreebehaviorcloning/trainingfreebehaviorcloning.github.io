@@ -96,3 +96,16 @@ if ('IntersectionObserver' in window) {
   }, { rootMargin: '-15% 0px -55% 0px', threshold: 0 });
   document.querySelectorAll('main > section[id]:not(#video)').forEach(section => observer.observe(section));
 }
+
+for (const animation of document.querySelectorAll('.demo-animation')) {
+  const still = animation.closest('picture').querySelector('source').srcset;
+  const showStill = () => {
+    if (new URL(animation.currentSrc || animation.src).pathname.endsWith('.gif')) {
+      animation.src = still;
+    }
+  };
+  animation.addEventListener('error', showStill);
+  if (animation.complete && !animation.naturalWidth && animation.currentSrc) {
+    showStill();
+  }
+}
