@@ -33,9 +33,9 @@ Figures and animations come from the authors' `ICRA_2027_Video.pptx` presentatio
 The original result/plot PNGs are unmodified. The fitting/inference figure uses
 a self-contained SVG to change its legend from “Training” to “Fitting” while
 preserving the original plot image and all data. The method diagram is a render
-of the original slide, with a 3840 × 2160 version for Retina displays. Demonstrations use smaller animated GIFs derived from the original clips.
-The originals are retained in the repository. Still images appear while GIFs load
-and for visitors who request reduced motion. See `asset-provenance.json` for
+of the original slide, with a 3840 × 2160 version for Retina displays. Demonstrations use muted inline MP4 loops at the original 10 frames per second.
+Videos load and play when visible. Still images appear while clips load and for
+visitors who request reduced motion. See `asset-provenance.json` for
 the source asset mapping and verification details. The complete presentation video is
 excluded from the website. The hero uses the 19-second drone and
 15.6-second manipulation clips. Header gradients and site accents use the

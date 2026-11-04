@@ -212,5 +212,68 @@
     "height": 203,
     "loop": 0,
     "sha256": "bbf1bbb34da3bf7fd73a18d1f6f7468898827ac9aae6dd0557c815490ce91140"
+  },
+  {
+    "file": "assets/drone-loop.mp4",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image3.gif",
+    "conversion": "H.264, CRF 22, original frames and timing, even-dimension padding",
+    "source_duration_seconds": 19.0,
+    "duration_seconds": 19.0,
+    "frames": 190,
+    "sha256": "7b77085143a92082547eb5d53d418b77438db007908190036b779e5108aecb90"
+  },
+  {
+    "file": "assets/drawer.mp4",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image4.gif",
+    "conversion": "H.264, CRF 22, original frames and timing, even-dimension padding",
+    "source_duration_seconds": 33.2,
+    "duration_seconds": 33.2,
+    "frames": 332,
+    "sha256": "54f7ac85f9dbd9809005f336c78f9c2479269c3a96ab7b917eff5c21b4cf495b"
+  },
+  {
+    "file": "assets/switch-bpc.mp4",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image5.gif",
+    "conversion": "H.264, CRF 22, original frames and timing, even-dimension padding",
+    "source_duration_seconds": 12.6,
+    "duration_seconds": 12.6,
+    "frames": 126,
+    "sha256": "e09d22c452ee648b98fe4a52e62cfe5713f72919f128cf5abe985dd36167ba9b"
+  },
+  {
+    "file": "assets/coffee.mp4",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image6.gif",
+    "conversion": "H.264, CRF 22, original frames and timing, even-dimension padding",
+    "source_duration_seconds": 15.6,
+    "duration_seconds": 15.6,
+    "frames": 156,
+    "sha256": "3b4e07d72c1bc5e9ec32d64c0550d200f61a5c890784d3037ec924de6d74643d"
+  },
+  {
+    "file": "assets/drone-figure-eight.mp4",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image11.gif",
+    "conversion": "H.264, CRF 22, original frames and timing, even-dimension padding",
+    "source_duration_seconds": 102.0,
+    "duration_seconds": 102.0,
+    "frames": 1020,
+    "sha256": "84eb360772fc0618fd615356d50d6fc0ab83e9d9e43f2efe2da5400438de2230"
+  },
+  {
+    "file": "assets/data-attribution.mp4",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image18.gif",
+    "conversion": "H.264, CRF 22, original frames and timing, even-dimension padding",
+    "source_duration_seconds": 40.4,
+    "duration_seconds": 40.4,
+    "frames": 404,
+    "sha256": "87a5ab7d5a42eeda23d77827c5f87307f921473921c3dcb4a1f07984629c60e9"
+  },
+  {
+    "file": "assets/switch-pi05.mp4",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image20.gif",
+    "conversion": "H.264, CRF 22, original frames and timing, even-dimension padding",
+    "source_duration_seconds": 20.9,
+    "duration_seconds": 20.9,
+    "frames": 209,
+    "sha256": "372188af5faafee9b1e3806db7f9759844674e31dfe04b9d2bfee7ec458aa410"
   }
 ]

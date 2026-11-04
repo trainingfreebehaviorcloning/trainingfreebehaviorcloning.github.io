@@ -13,8 +13,8 @@
   <meta property="og:image" content="https://trainingfreebehaviorcloning.github.io/assets/method-slide.png">
   <link rel="canonical" href="https://trainingfreebehaviorcloning.github.io/">
   <link rel="icon" href="assets/favicon.svg?v=7c495b019fab" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=8e044fcbcf65">
-  <script src="script.js?v=7b5c9fa5363a" defer></script>
+  <link rel="stylesheet" href="styles.css?v=5221dc31734a">
+  <script src="script.js?v=924ae5643e79" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -55,11 +55,11 @@
       <p class="teaser-subtitle">Behavior cloning by interpolating expert demonstrations.</p>
       <div class="hero-demos">
         <figure>
-          <picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/drone-loop.jpg?v=9f8605bd7ab7"><img id="teaser-drone" class="demo-animation" src="assets/drone-loop-web.gif" width="360" height="203" style="--demo-poster: url(assets/drone-loop.jpg?v=9f8605bd7ab7)" loading="eager" decoding="async" alt="Short BPC drone navigation demonstration"></picture>
+          <div class="demo-media"><img class="demo-animation" src="assets/drone-loop.jpg?v=9f8605bd7ab7" width="480" height="270" alt="Short BPC drone navigation demonstration"><video id="teaser-drone" class="demo-animation" width="480" height="270" poster="assets/drone-loop.jpg?v=9f8605bd7ab7" data-src="assets/drone-loop.mp4" preload="none" muted loop playsinline aria-hidden="true"></video></div>
           <!-- <figcaption>Drone navigation <span>19-second loop</span></figcaption> -->
         </figure>
         <figure>
-          <picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/coffee.jpg?v=fb8f7f4b1c2c"><img id="teaser-arm" class="demo-animation" src="assets/coffee-web.gif" width="360" height="203" style="--demo-poster: url(assets/coffee.jpg?v=fb8f7f4b1c2c)" loading="eager" decoding="async" alt="Short BPC tabletop manipulation demonstration"></picture>
+          <div class="demo-media"><img class="demo-animation" src="assets/coffee.jpg?v=fb8f7f4b1c2c" width="480" height="270" alt="Short BPC tabletop manipulation demonstration"><video id="teaser-arm" class="demo-animation" width="480" height="270" poster="assets/coffee.jpg?v=fb8f7f4b1c2c" data-src="assets/coffee.mp4" preload="none" muted loop playsinline aria-hidden="true"></video></div>
           <!-- <figcaption>Tabletop manipulation <span>16-second loop</span></figcaption> -->
         </figure>
       </div>
@@ -139,7 +139,7 @@
         <h2>Action attribution</h2>
         <p class="section-intro">BPC retains the retrieved demonstration segments and the coefficients used to combine them.</p>
         <figure class="attribution-figure">
-          <picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/data-attribution.jpg?v=5c0085669f63"><img class="demo-animation" src="assets/data-attribution-web.gif" width="800" height="700" style="--demo-poster: url(assets/data-attribution.jpg?v=5c0085669f63)" loading="lazy" decoding="async" alt="Data attribution for Loop and Figure-eight drone flights"></picture>
+          <div class="demo-media"><img class="demo-animation" loading="lazy" src="assets/data-attribution.jpg?v=5c0085669f63" width="1600" height="1400" alt="Data attribution for Loop and Figure-eight drone flights"><video class="demo-animation" width="1600" height="1400" poster="assets/data-attribution.jpg?v=5c0085669f63" data-src="assets/data-attribution.mp4" preload="none" muted loop playsinline aria-hidden="true"></video></div>
           <figcaption>Retrieved demonstration segments, flown paths, and predicted references for Loop and Figure-eight flights.</figcaption>
         </figure>
       </div>
@@ -153,23 +153,23 @@
           <h3>Tabletop manipulation</h3>
           <p class="subsection-intro">Coffee, Drawer, and Switch tasks on a UFactory xArm6.</p>
           <div class="demo-grid">
-            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/coffee.jpg?v=fb8f7f4b1c2c"><img class="demo-animation" src="assets/coffee-web.gif" width="360" height="203" style="--demo-poster: url(assets/coffee.jpg?v=fb8f7f4b1c2c)" loading="lazy" decoding="async" alt="BPC Coffee task hardware demonstration"></picture><figcaption>Coffee</figcaption></figure>
-            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/drawer.jpg?v=8c78f2da4a25"><img class="demo-animation" src="assets/drawer-web.gif" width="360" height="203" style="--demo-poster: url(assets/drawer.jpg?v=8c78f2da4a25)" loading="lazy" decoding="async" alt="BPC Drawer task hardware demonstration"></picture><figcaption>Drawer</figcaption></figure>
+            <figure><div class="demo-media"><img class="demo-animation" loading="lazy" src="assets/coffee.jpg?v=fb8f7f4b1c2c" width="480" height="270" alt="BPC Coffee task hardware demonstration"><video class="demo-animation" width="480" height="270" poster="assets/coffee.jpg?v=fb8f7f4b1c2c" data-src="assets/coffee.mp4" preload="none" muted loop playsinline aria-hidden="true"></video></div><figcaption>Coffee</figcaption></figure>
+            <figure><div class="demo-media"><img class="demo-animation" loading="lazy" src="assets/drawer.jpg?v=8c78f2da4a25" width="480" height="270" alt="BPC Drawer task hardware demonstration"><video class="demo-animation" width="480" height="270" poster="assets/drawer.jpg?v=8c78f2da4a25" data-src="assets/drawer.mp4" preload="none" muted loop playsinline aria-hidden="true"></video></div><figcaption>Drawer</figcaption></figure>
           </div>
           <figure class="original-figure hardware-figure"><a href="assets/hardware-manipulation.png?v=2126cdf97ea0" target="_blank" rel="noopener" aria-label="Open the full-size hardware manipulation results"><img src="assets/hardware-manipulation.png?v=2126cdf97ea0" width="1690" height="1402" loading="lazy" alt="Coffee, Drawer, and Switch sequences. BPC succeeds in 36, 38, and 34 out of 40 trials, compared with 39, 40, and 8 for pi 0.5."></a><figcaption>Successes in 40 trials per task. BPC and π<sub>0.5</sub> use the same demonstrations.</figcaption></figure>
           <h4>Switch task</h4>
           <p class="subsection-intro">The robot must place the bag on the plate opposite its starting position. This requires remembering which plate the bag came from.</p>
           <div class="demo-grid">
-            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/switch-bpc.jpg?v=62c67e1f166e"><img class="demo-animation" src="assets/switch-bpc-web.gif" width="360" height="203" style="--demo-poster: url(assets/switch-bpc.jpg?v=62c67e1f166e)" loading="lazy" decoding="async" alt="BPC on the Switch task"></picture><figcaption>BPC</figcaption></figure>
-            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/switch-pi05.jpg?v=f75d7422728d"><img class="demo-animation" src="assets/switch-pi05-web.gif" width="360" height="203" style="--demo-poster: url(assets/switch-pi05.jpg?v=f75d7422728d)" loading="lazy" decoding="async" alt="Pi 0.5 on the Switch task"></picture><figcaption>π<sub>0.5</sub></figcaption></figure>
+            <figure><div class="demo-media"><img class="demo-animation" loading="lazy" src="assets/switch-bpc.jpg?v=62c67e1f166e" width="480" height="270" alt="BPC on the Switch task"><video class="demo-animation" width="480" height="270" poster="assets/switch-bpc.jpg?v=62c67e1f166e" data-src="assets/switch-bpc.mp4" preload="none" muted loop playsinline aria-hidden="true"></video></div><figcaption>BPC</figcaption></figure>
+            <figure><div class="demo-media"><img class="demo-animation" loading="lazy" src="assets/switch-pi05.jpg?v=f75d7422728d" width="480" height="270" alt="Pi 0.5 on the Switch task"><video class="demo-animation" width="480" height="270" poster="assets/switch-pi05.jpg?v=f75d7422728d" data-src="assets/switch-pi05.mp4" preload="none" muted loop playsinline aria-hidden="true"></video></div><figcaption>π<sub>0.5</sub></figcaption></figure>
           </div>
         </div>
         <div class="experiment-subsection">
           <h3>Drone navigation</h3>
           <p class="subsection-intro">Onboard control using raw-pixel observations.</p>
           <div class="demo-grid">
-            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/drone-loop.jpg?v=9f8605bd7ab7"><img class="demo-animation" src="assets/drone-loop-web.gif" width="360" height="203" style="--demo-poster: url(assets/drone-loop.jpg?v=9f8605bd7ab7)" loading="lazy" decoding="async" alt="BPC drone Loop flight"></picture><figcaption>Loop (3 demonstrations)</figcaption></figure>
-            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/drone-figure-eight.jpg?v=0a612be705f8"><img class="demo-animation" src="assets/drone-figure-eight-web.gif" width="320" height="180" style="--demo-poster: url(assets/drone-figure-eight.jpg?v=0a612be705f8)" loading="lazy" decoding="async" alt="BPC drone Figure-eight flight"></picture><figcaption>Figure-eight (4 demonstrations)</figcaption></figure>
+            <figure><div class="demo-media"><img class="demo-animation" loading="lazy" src="assets/drone-loop.jpg?v=9f8605bd7ab7" width="480" height="270" alt="BPC drone Loop flight"><video class="demo-animation" width="480" height="270" poster="assets/drone-loop.jpg?v=9f8605bd7ab7" data-src="assets/drone-loop.mp4" preload="none" muted loop playsinline aria-hidden="true"></video></div><figcaption>Loop (3 demonstrations)</figcaption></figure>
+            <figure><div class="demo-media"><img class="demo-animation" loading="lazy" src="assets/drone-figure-eight.jpg?v=0a612be705f8" width="360" height="202" alt="BPC drone Figure-eight flight"><video class="demo-animation" width="360" height="202" poster="assets/drone-figure-eight.jpg?v=0a612be705f8" data-src="assets/drone-figure-eight.mp4" preload="none" muted loop playsinline aria-hidden="true"></video></div><figcaption>Figure-eight (4 demonstrations)</figcaption></figure>
           </div>
           <figure class="original-figure"><a href="assets/drone-results.png?v=a0abe9dd3cea" target="_blank" rel="noopener" aria-label="Open the full-size drone results"><img src="assets/drone-results.png?v=a0abe9dd3cea" width="1678" height="404" loading="lazy" alt="Drone results. Loop: 10 of 10 successes, 0 collisions per metre, 0.095 metre demonstration-set distance, 3 demonstrations averaging 25.2 seconds. Figure-eight: 8 of 10 successes, 0.0108 collisions per metre, 0.109 metre distance, 4 demonstrations averaging 33.5 seconds."></a><figcaption>Results from 10 flights per task. See Table IV of the paper for the evaluation metrics.</figcaption></figure>
         </div>

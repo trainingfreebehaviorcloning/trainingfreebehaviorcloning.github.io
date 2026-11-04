@@ -6,7 +6,8 @@ The public GitHub Pages site publishes from the root of main. Use localhost to r
   recorded in `palette-provenance.json` for site accents and heading gradients.
 - Do not put the complete research presentation video back on the website.
   Use short, relevant clips from the supplied materials.
-- Use animated GIF images for demonstrations. Do not embed MP4s or video players.
+- Use short, muted inline video loops for demonstrations. Keep still posters for
+  loading and reduced motion.
 - Keep the method diagram large and centered, with descriptions underneath.
   Do not shrink it into a layout with descriptions beside it.
 - Highlight connected arrows without adding outlines or white halos that cross

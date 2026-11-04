@@ -97,15 +97,37 @@ if ('IntersectionObserver' in window) {
   document.querySelectorAll('main > section[id]:not(#video)').forEach(section => observer.observe(section));
 }
 
-for (const animation of document.querySelectorAll('.demo-animation')) {
-  const still = animation.closest('picture').querySelector('source').srcset;
-  const showStill = () => {
-    if (new URL(animation.currentSrc || animation.src).pathname.endsWith('.gif')) {
-      animation.src = still;
+// Load and play only demos in view. Reduced motion keeps the still frames.
+if ('IntersectionObserver' in window) {
+  const demos = document.querySelectorAll('video.demo-animation');
+  for (const video of demos) {
+    video.addEventListener('playing', () => video.classList.add('is-playing'));
+    video.addEventListener('error', () => video.classList.remove('is-playing'));
+  }
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const demoObserver = new IntersectionObserver(entries => {
+    for (const { target: video, isIntersecting } of entries) {
+      if (isIntersecting && !reducedMotion.matches) {
+        if (!video.hasAttribute('src')) video.src = video.dataset.src;
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    }
+  });
+
+  const updateDemos = () => {
+    demoObserver.disconnect();
+    for (const video of demos) {
+      if (reducedMotion.matches) {
+        video.pause();
+        video.classList.remove('is-playing');
+      } else {
+        demoObserver.observe(video);
+      }
     }
   };
-  animation.addEventListener('error', showStill);
-  if (animation.complete && !animation.naturalWidth && animation.currentSrc) {
-    showStill();
-  }
+
+  updateDemos();
+  reducedMotion.addEventListener('change', updateDemos);
 }
