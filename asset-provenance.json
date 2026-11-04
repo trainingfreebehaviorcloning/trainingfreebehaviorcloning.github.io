@@ -1,0 +1,132 @@
+[
+  {
+    "file": "assets/computation-scaling.png",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image12.png",
+    "sha256": "2952d5a00012e510792ac0480934bcdaa6c65d2dd838dfae4040b122875a0269",
+    "conversion": "none"
+  },
+  {
+    "file": "assets/simulation-tabletop.png",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image16.png",
+    "sha256": "d9b33baf8d565909f0e16fa87397498e2322ad446ddb3b9a57b9b4d720e66b69",
+    "conversion": "none"
+  },
+  {
+    "file": "assets/simulation-dexterous.png",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image17.png",
+    "sha256": "0a7b6e6757d9e1556bed2fe102a521153a2cd96dcb01dbefcdbaf3e85ade758d",
+    "conversion": "none"
+  },
+  {
+    "file": "assets/hardware-manipulation.png",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image21.png",
+    "sha256": "2126cdf97ea05c8086631aa0a1f0235e3c637f031d80cf43bf08c1868b9e95ea",
+    "conversion": "none"
+  },
+  {
+    "file": "assets/drone-results.png",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image22.png",
+    "sha256": "a0abe9dd3cea85be475df4165394aa97684f8a68d8c0544150fcb8b47537eabd",
+    "conversion": "none"
+  },
+  {
+    "file": "assets/drone-loop.gif",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image3.gif",
+    "conversion": "none; original animated GIF from PowerPoint",
+    "source_duration_seconds": 19.0,
+    "duration_seconds": 19.0,
+    "frames": 190,
+    "sha256": "8ddb98d715c66d3c6cf1bbefaa7bf350bade579f13e52de60bdc0880c4fc8161",
+    "width": 480,
+    "height": 270,
+    "loop": 0
+  },
+  {
+    "file": "assets/drawer.gif",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image4.gif",
+    "conversion": "none; original animated GIF from PowerPoint",
+    "source_duration_seconds": 33.2,
+    "duration_seconds": 33.2,
+    "frames": 332,
+    "sha256": "0aeb2e2fc3387ba3eb2b471c9657105829bd59c72659f3fee4a4af80c8f1bec8",
+    "width": 480,
+    "height": 270,
+    "loop": 0
+  },
+  {
+    "file": "assets/switch-bpc.gif",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image5.gif",
+    "conversion": "none; original animated GIF from PowerPoint",
+    "source_duration_seconds": 12.6,
+    "duration_seconds": 12.6,
+    "frames": 126,
+    "sha256": "ff78a46402dd988690c38fa4e711ec99925f9a59c90ed254f90322ec0d341b9e",
+    "width": 480,
+    "height": 270,
+    "loop": 0
+  },
+  {
+    "file": "assets/coffee.gif",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image6.gif",
+    "conversion": "none; original animated GIF from PowerPoint",
+    "source_duration_seconds": 15.6,
+    "duration_seconds": 15.6,
+    "frames": 156,
+    "sha256": "8869b115853000734cc8dd5f9eb0e2bef60c7e5b0c6aa1131c04f9973df83fb2",
+    "width": 480,
+    "height": 270,
+    "loop": 0
+  },
+  {
+    "file": "assets/drone-figure-eight.gif",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image11.gif",
+    "conversion": "none; original animated GIF from PowerPoint",
+    "source_duration_seconds": 102.0,
+    "duration_seconds": 102.0,
+    "frames": 1020,
+    "sha256": "3f52cabf480a2f45118eaddcf79cc69ba42011802c0a1766b5306ff5092c7ffe",
+    "width": 359,
+    "height": 202,
+    "loop": 0
+  },
+  {
+    "file": "assets/data-attribution.gif",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image18.gif",
+    "conversion": "none; original animated GIF from PowerPoint",
+    "source_duration_seconds": 40.4,
+    "duration_seconds": 40.4,
+    "frames": 404,
+    "sha256": "c0a76678891822d0c5961b07a3e9d2822e13246cbc739cfa205b9c8fca44a545",
+    "width": 1600,
+    "height": 1400,
+    "loop": 0
+  },
+  {
+    "file": "assets/switch-pi05.gif",
+    "source": "ICRA_2027_Video.pptx:ppt/media/image20.gif",
+    "conversion": "none; original animated GIF from PowerPoint",
+    "source_duration_seconds": 20.9,
+    "duration_seconds": 20.9,
+    "frames": 209,
+    "sha256": "34dbb4aabcbb9fd4c4783bdedd8831b7644546b17329dbbc0949feba0b1d61ac",
+    "width": 480,
+    "height": 270,
+    "loop": 0
+  },
+  {
+    "file": "assets/method-slide@2x.png",
+    "source": "ICRA_2027_Video.pptx:slide 5",
+    "conversion": "Original slide rendered at scale 3, without changes to slide content or geometry",
+    "width": 3840,
+    "height": 2160,
+    "sha256": "456af7c6d0268a732f28fdd63b10fb05c0921075fc036dbb45a778f5b51e200e"
+  },
+  {
+    "file": "assets/computation-scaling-fitting.svg",
+    "source": "assets/computation-scaling.png",
+    "source_sha256": "2952d5a00012e510792ac0480934bcdaa6c65d2dd838dfae4040b122875a0269",
+    "conversion": "Original PNG embedded byte for byte; only the Training legend text is covered and relabeled Fitting with vector text. Plot data and geometry are unchanged.",
+    "font": "DejaVu Sans, embedded",
+    "sha256": "a0c005840721ce65504ab57dce6d8cd51b00341063def8703b8b3986069324d5"
+  }
+]

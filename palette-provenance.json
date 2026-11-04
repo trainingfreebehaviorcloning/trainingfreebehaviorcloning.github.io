@@ -1,0 +1,17 @@
+{
+  "source": "ICRA_2027_Video.pptx",
+  "source_slides": [1, 2, 5, 11],
+  "extraction": "Original DrawingML srgbClr gradient stops, sorted by position",
+  "header_gradient": [
+    { "position_percent": 0, "color": "#C12036" },
+    { "position_percent": 33, "color": "#DA5D36" },
+    { "position_percent": 67, "color": "#D49E4E" },
+    { "position_percent": 100, "color": "#273D62" }
+  ],
+  "method_accents": {
+    "retrieval": "#DA5D36",
+    "action_continuation": "#D49E4E",
+    "correction": "#273D62",
+    "readable_gold_text": "#906524"
+  }
+}

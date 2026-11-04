@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Training-free Behavior Cloning</title>
+  <meta name="description" content="Behavior Predictive Control uses stored demonstrations to predict robot actions without end-to-end neural policy training. Research from Stanford University.">
+  <meta property="og:title" content="Training-free Behavior Cloning">
+  <meta property="og:description" content="Behavior Predictive Control: robot imitation through retrieval, action continuation, and closed-form correction.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://trainingfreebehaviorcloning.github.io/">
+  <meta property="og:image" content="https://trainingfreebehaviorcloning.github.io/assets/method-slide.png">
+  <link rel="canonical" href="https://trainingfreebehaviorcloning.github.io/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=82e5166c9fbe">
+  <script src="script.js?v=e3038a76b8ab" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-paper" viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8zM14 3v5h5M8 12h8M8 16h6"/></symbol>
+    <symbol id="icon-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7z"/></symbol>
+    <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h4"/></symbol>
+    <symbol id="icon-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 14h8"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  </svg>
+
+  <aside class="research-menu">
+    <details id="research-dropdown">
+      <summary><svg class="icon"><use href="#icon-flask"/></svg> More Research <span class="chevron" aria-hidden="true"></span></summary>
+      <div class="research-links">
+        <a href="https://singerpaper.github.io/" target="_blank" rel="noopener"><strong>SINGER</strong><span>Onboard vision-language navigation for drones</span></a>
+        <a href="https://msl.stanford.edu/" target="_blank" rel="noopener"><strong>Stanford MSL</strong><span>Multi-Robot Systems Lab</span></a>
+      </div>
+    </details>
+  </aside>
+
+  <header class="paper-header" id="top">
+    <h1 class="gradient-text">Training-free Behavior Cloning</h1>
+    <p class="authors"><span>Maximilian Adang<sup>*</sup></span><span>Timothy Chen<sup>*</sup></span><span>Lars Osterberg</span><span>Aiden Swann</span><span>Mac Schwager</span></p>
+    <p class="affiliation">Stanford University</p>
+    <p class="contribution"><sup>*</sup>Equal contribution</p>
+    <div class="resource-links" aria-label="Paper resources">
+      <a class="pill" href="https://arxiv.org/pdf/2609.30134" target="_blank" rel="noopener"><svg class="icon"><use href="#icon-paper"/></svg> Paper</a>
+      <span class="pill unavailable" title="A public code link has not been announced"><svg class="icon"><use href="#icon-code"/></svg> Code <small>Coming soon</small></span>
+      <a class="pill" href="https://arxiv.org/abs/2609.30134" target="_blank" rel="noopener"><span class="arxiv-icon" aria-hidden="true">χ</span> arXiv</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="teaser container" id="video" aria-label="Short robot demonstrations">
+      <h2 class="teaser-title gradient-text">Behavior Predictive Control</h2>
+      <p class="teaser-subtitle">Behavior cloning by interpolating expert demonstrations.</p>
+      <div class="hero-demos">
+        <figure>
+          <picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/drone-loop.jpg"><img id="teaser-drone" class="demo-animation" src="assets/drone-loop.gif" width="480" height="270" loading="eager" decoding="async" alt="Short BPC drone navigation demonstration"></picture>
+          <!-- <figcaption>Drone navigation <span>19-second loop</span></figcaption> -->
+        </figure>
+        <figure>
+          <picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/coffee.jpg"><img id="teaser-arm" class="demo-animation" src="assets/coffee.gif" width="480" height="270" loading="eager" decoding="async" alt="Short BPC tabletop manipulation demonstration"></picture>
+          <!-- <figcaption>Tabletop manipulation <span>16-second loop</span></figcaption> -->
+        </figure>
+      </div>
+    </section>
+
+    <nav class="section-nav" aria-label="On this page">
+      <a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#attribution">Attribution</a><a href="#experiments">Experiments</a><a href="#editability">Editability</a><a href="#bibtex">BibTeX</a>
+    </nav>
+
+    <section class="section tinted" id="abstract">
+      <div class="reading-width">
+        <h2>Abstract</h2>
+        <p class="lead">Behavior Predictive Control (BPC) predicts actions from short segments of recorded demonstrations.</p>
+        <!-- <p>At each control step, BPC retrieves observation–action histories similar to the robot’s current history. It fits coefficients to reconstruct that history and uses the same coefficients to combine the retrieved future actions. A fitted residual model corrects the prediction.</p> -->
+        <!-- <p>The retrieved segments and their coefficients identify the demonstrations used for each prediction. Editing the demonstration bank can change the policy’s behavior, as shown in the case study below.</p> -->
+         <p>Neural behavior cloning compresses demonstrations into large models, making individual actions difficult to trace and policy updates costly. Retrieval policies retain access to demonstrations but struggle with mismatch between recorded and live behavior. We introduce Behavior Predictive Control (BPC), which synthesizes policies without end-to-end policy training by combining an action-aware retrieval metric, a Hankel-based action-continuation prior, and a closed-form one-step residual correction. Inspired by behavioral systems theory, BPC predicts future actions by blending stored observation-action data that best reconstructs the recent runtime observation--action history. Across simulated benchmarks and real-robot deployments, BPC is competitive with learned policies such as π0.5 (surpassing it in some cases), while reducing policy fitting from hours to seconds on consumer GPUs and supporting closed-loop control upwards of 75 Hz on a Jetson Orin Nano. The retrieved demonstration windows and their coefficients also provide an intrinsic estimate of task progress. Retaining demonstrations within the deployed policy makes its predictions traceable to supporting trajectories and enables behavior revision through the demonstration bank.</p>
+        <p class="definition"><strong>“Training-free”</strong> means no costly end-to-end neural policy training or fine-tuning.</p>
+        <!-- <a class="text-link" href="https://arxiv.org/abs/2609.30134" target="_blank" rel="noopener">Read the full abstract <svg class="icon"><use href="#icon-arrow"/></svg></a> -->
+      </div>
+    </section>
+
+    <section class="section" id="method" data-active-step="retrieval">
+      <div class="container">
+        <h2>Method</h2>
+        <p class="section-intro">BPC retrieves demonstration segments, combines their future actions, and applies a residual correction at each control step.</p>
+        <figure class="method-figure">
+          <div class="method-diagram" role="group" aria-label="Interactive BPC method diagram">
+            <img src="assets/method-slide.png" srcset="assets/method-slide.png 1920w, assets/method-slide@2x.png 3840w" sizes="(max-width: 520px) calc(100vw - 26px), (max-width: 1040px) calc(100vw - 56px), 984px" alt="BPC method diagram: retrieve demonstration segments using images, proprioception, and past actions; combine their future actions; and add a residual correction using pooled random Fourier features." width="1920" height="1080" loading="lazy">
+            <div class="method-diagram-title" aria-hidden="true"><img src="assets/method-slide.png" srcset="assets/method-slide.png 1920w, assets/method-slide@2x.png 3840w" sizes="(max-width: 520px) calc(100vw - 26px), (max-width: 1040px) calc(100vw - 56px), 984px" alt="" width="1920" height="1080" loading="lazy"></div>
+            <svg class="method-highlights" viewBox="0 0 1920 1080" aria-hidden="true" focusable="false">
+              <defs>
+                <filter id="method-area-glow" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="9"/></filter>
+                <filter id="method-arrow-glow" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="3"/></filter>
+              </defs>
+              <g class="method-highlight" data-step="retrieval">
+                <rect class="method-area" x="350" y="293" width="500" height="488" rx="24" fill="#DA5D36"/>
+                <g class="method-arrow-glow">
+                  <path d="M555 547V438" stroke="#273D62"/>
+                  <path d="M727 463H942 M889 463V824H937" stroke="#DA5D36"/>
+                </g>
+              </g>
+              <g class="method-highlight" data-step="continuation">
+                <rect class="method-area" x="940" y="293" width="620" height="335" rx="24" fill="#D49E4E"/>
+                <g class="method-arrow-glow" stroke="#D49E4E">
+                  <path d="M1448 406L1494 395 M1448 466L1500 409 M1448 526L1508 417 M1448 586L1518 418 M1519 417V820 M1547 861H1604"/>
+                  <circle cx="1519" cy="390" r="26"/>
+                  <circle cx="1519" cy="860" r="26"/>
+                </g>
+              </g>
+              <g class="method-highlight" data-step="correction">
+                <rect class="method-area" x="940" y="651" width="490" height="331" rx="24" fill="#273D62"/>
+                <g class="method-arrow-glow">
+                  <path d="M727 463H889V824H937" stroke="#DA5D36"/>
+                  <path d="M544 779V901H937" stroke="#273D62"/>
+                  <path d="M1327 861H1490 M1547 861H1604" stroke="#D49E4E"/>
+                  <circle cx="1519" cy="860" r="26" stroke="#D49E4E"/>
+                </g>
+              </g>
+            </svg>
+            <button type="button" class="method-hotspot is-active" data-step="retrieval" aria-label="Retrieval component" aria-controls="method-panel" aria-pressed="true"></button>
+            <button type="button" class="method-hotspot" data-step="continuation" aria-label="Action continuation component" aria-controls="method-panel" aria-pressed="false"></button>
+            <button type="button" class="method-hotspot" data-step="correction" aria-label="Learned correction component" aria-controls="method-panel" aria-pressed="false"></button>
+          </div>
+          <!-- <figcaption>Hover or select a component to see its description. <a href="assets/method-slide@2x.png" target="_blank" rel="noopener" aria-label="Open the full-size method diagram">Full-size diagram</a> and <a href="https://arxiv.org/html/2609.30134v1#S4" target="_blank" rel="noopener">Method details</a></figcaption> -->
+        </figure>
+        <div class="method-tabs" role="tablist" aria-label="BPC method steps">
+          <button role="tab" id="tab-retrieval" aria-selected="true" aria-controls="method-panel" tabindex="0" data-step="retrieval"><span>1</span> Retrieval</button>
+          <button role="tab" id="tab-continuation" aria-selected="false" aria-controls="method-panel" tabindex="-1" data-step="continuation"><span>2</span> Continuation</button>
+          <button role="tab" id="tab-correction" aria-selected="false" aria-controls="method-panel" tabindex="-1" data-step="correction"><span>3</span> Correction</button>
+        </div>
+        <div class="method-panel" id="method-panel" role="tabpanel" aria-labelledby="tab-retrieval" aria-live="polite" aria-atomic="true" tabindex="0"><h3>Retrieve demonstration segments</h3><p>Use the fitted action-aware metric to retrieve segments with observation–action histories similar to the current history.</p></div>
+      </div>
+    </section>
+
+    <section class="section tinted" id="attribution">
+      <div class="container">
+        <h2>Action attribution</h2>
+        <p class="section-intro">BPC retains the retrieved demonstration segments and the coefficients used to combine them.</p>
+        <figure class="attribution-figure">
+          <picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/data-attribution.jpg"><img class="demo-animation" src="assets/data-attribution.gif" width="1600" height="1400" loading="lazy" decoding="async" alt="Data attribution for Loop and Figure-eight drone flights"></picture>
+          <figcaption>Retrieved demonstration segments, flown paths, and predicted references for Loop and Figure-eight flights.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="experiments">
+      <div class="container">
+        <h2>Experiments</h2>
+        <p class="section-intro">We evaluate BPC on manipulation and drone navigation, in simulation and on hardware.</p>
+        <div class="experiment-subsection">
+          <h3>Tabletop manipulation</h3>
+          <p class="subsection-intro">Coffee, Drawer, and Switch tasks on a UFactory xArm6.</p>
+          <div class="demo-grid">
+            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/coffee.jpg"><img class="demo-animation" src="assets/coffee.gif" width="480" height="270" loading="lazy" decoding="async" alt="BPC Coffee task hardware demonstration"></picture><figcaption>Coffee</figcaption></figure>
+            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/drawer.jpg"><img class="demo-animation" src="assets/drawer.gif" width="480" height="270" loading="lazy" decoding="async" alt="BPC Drawer task hardware demonstration"></picture><figcaption>Drawer</figcaption></figure>
+          </div>
+          <figure class="original-figure hardware-figure"><a href="assets/hardware-manipulation.png" target="_blank" rel="noopener" aria-label="Open the full-size hardware manipulation results"><img src="assets/hardware-manipulation.png" width="1690" height="1402" loading="lazy" alt="Coffee, Drawer, and Switch sequences. BPC succeeds in 36, 38, and 34 out of 40 trials, compared with 39, 40, and 8 for pi 0.5."></a><figcaption>Successes in 40 trials per task. BPC and π<sub>0.5</sub> use the same demonstrations.</figcaption></figure>
+          <h4>Switch task</h4>
+          <p class="subsection-intro">The robot must place the bag on the plate opposite its starting position. This requires remembering which plate the bag came from.</p>
+          <div class="demo-grid">
+            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/switch-bpc.jpg"><img class="demo-animation" src="assets/switch-bpc.gif" width="480" height="270" loading="lazy" decoding="async" alt="BPC on the Switch task"></picture><figcaption>BPC</figcaption></figure>
+            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/switch-pi05.jpg"><img class="demo-animation" src="assets/switch-pi05.gif" width="480" height="270" loading="lazy" decoding="async" alt="Pi 0.5 on the Switch task"></picture><figcaption>π<sub>0.5</sub></figcaption></figure>
+          </div>
+        </div>
+        <div class="experiment-subsection">
+          <h3>Drone navigation</h3>
+          <p class="subsection-intro">Onboard control using raw-pixel observations.</p>
+          <div class="demo-grid">
+            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/drone-loop.jpg"><img class="demo-animation" src="assets/drone-loop.gif" width="480" height="270" loading="lazy" decoding="async" alt="BPC drone Loop flight"></picture><figcaption>Loop (3 demonstrations)</figcaption></figure>
+            <figure><picture class="demo-media"><source media="(prefers-reduced-motion: reduce)" srcset="assets/drone-figure-eight.jpg"><img class="demo-animation" src="assets/drone-figure-eight.gif" width="359" height="202" loading="lazy" decoding="async" alt="BPC drone Figure-eight flight"></picture><figcaption>Figure-eight (4 demonstrations)</figcaption></figure>
+          </div>
+          <figure class="original-figure"><a href="assets/drone-results.png" target="_blank" rel="noopener" aria-label="Open the full-size drone results"><img src="assets/drone-results.png" width="1678" height="404" loading="lazy" alt="Drone results. Loop: 10 of 10 successes, 0 collisions per metre, 0.095 metre demonstration-set distance, 3 demonstrations averaging 25.2 seconds. Figure-eight: 8 of 10 successes, 0.0108 collisions per metre, 0.109 metre distance, 4 demonstrations averaging 33.5 seconds."></a><figcaption>Results from 10 flights per task. See Table IV of the paper for the evaluation metrics.</figcaption></figure>
+        </div>
+        <div class="experiment-subsection">
+          <h3>Simulation benchmarks</h3>
+          <figure class="original-figure"><a href="assets/simulation-tabletop.png" target="_blank" rel="noopener" aria-label="Open the full-size tabletop simulation results"><img src="assets/simulation-tabletop.png" width="1698" height="596" loading="lazy" alt="Simulation tabletop results across eight tasks, 300 rollouts per task. Mean success rates: SDP 76 percent, pi 0.5 77 percent, DARP 52 percent, BPC 73 percent."></a><figcaption>Tabletop manipulation (300 rollouts per task)</figcaption></figure>
+          <figure class="original-figure"><a href="assets/simulation-dexterous.png" target="_blank" rel="noopener" aria-label="Open the full-size dexterous manipulation results"><img src="assets/simulation-dexterous.png" width="1150" height="428" loading="lazy" alt="DexArt and Adroit results, 120 rollouts per task. BPC-3D means are 63 percent on DexArt and 70 percent on Adroit, compared with 67 and 75 for SDP-3D, and 64 and 62 for DARP-3D."></a><figcaption>DexArt and Adroit (120 rollouts per task)</figcaption></figure>
+        </div>
+        <div class="experiment-subsection">
+          <h3>Fitting and inference cost</h3>
+          <figure class="original-figure" id="computation-figure"><a href="assets/computation-scaling-fitting.svg" target="_blank" rel="noopener" aria-label="Open the full-size computation scaling figure"><img src="assets/computation-scaling-fitting.svg" width="2600" height="1320" loading="lazy" alt="Fitting time, inference latency, and peak GPU memory over 200 to 200,000 demonstration windows, comparing BPC and pi 0.5 on an RTX 4090."></a><figcaption>Fitting time, inference latency, and peak GPU memory on an RTX 4090. Time is plotted on a logarithmic scale.</figcaption></figure>
+          <div class="timing-strip"><div><strong>30–120 s</strong><span>Manipulation policy fit on RTX 4090</span></div><div><strong>75 Hz</strong><span>Onboard control on Jetson Orin Nano</span></div></div>
+        </div>
+        <p class="source-note">Evaluation protocols and timing details appear in <a href="https://arxiv.org/html/2609.30134v1#S5" target="_blank" rel="noopener">Section V of the paper</a>. Click a figure to view it at full resolution.</p>
+      </div>
+    </section>
+
+    <section class="section" id="editability">
+      <div class="container">
+        <h2>Editing the demonstration bank</h2>
+        <p class="section-intro">Removing demonstrations changes the predicted trajectory in the Square task.</p>
+        <div class="edit-pair">
+          <figure><div class="image-label"><span class="dot original"></span> Original demonstration bank</div><img src="assets/bank-original.png" width="900" height="450" loading="lazy" alt="Original-bank continuation in the Square task, with the recorded nut path shown in green."></figure>
+          <figure><div class="image-label"><span class="dot edited"></span> Edited demonstration bank</div><img src="assets/bank-edited.png" width="900" height="450" loading="lazy" alt="Continuation after excluding demonstrations, with the new path shown in orange and original path dashed."></figure>
+        </div>
+        <p class="edit-description">We removed 12 demonstrations while keeping the query, fitted modules, and normalizers fixed. Both rollouts succeed. The images show the same simulation step and camera view.</p>
+      </div>
+    </section>
+
+    <section class="section tinted citation-section" id="bibtex">
+      <div class="reading-width">
+        <div class="citation-heading"><h2>BibTeX</h2><button id="copy-citation" class="copy-button"><svg class="icon"><use href="#icon-copy"/></svg><span>Copy</span></button></div>
+        <pre><code id="citation">@misc{adang2026trainingfreebehaviorcloning,
+  title={Training-free Behavior Cloning},
+  author={Maximilian Adang and Timothy Chen and Lars Osterberg
+          and Aiden Swann and Mac Schwager},
+  year={2026},
+  eprint={2609.30134},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  url={https://arxiv.org/abs/2609.30134}
+}</code></pre>
+        <p id="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+  <footer><p>Training-free Behavior Cloning, Stanford University</p><p>Design inspired by the <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener">Nerfies academic project page</a>.</p><p>Research content: <a href="https://arxiv.org/abs/2609.30134" target="_blank" rel="noopener">arXiv:2609.30134</a>. License: <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></p></footer>
+</body>
+</html>
