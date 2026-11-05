@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://trainingfreebehaviorcloning.github.io/assets/method-slide.png">
   <link rel="canonical" href="https://trainingfreebehaviorcloning.github.io/">
   <link rel="icon" href="assets/favicon.svg?v=7c495b019fab" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=6d01d8454731">
+  <link rel="stylesheet" href="styles.css?v=f080bb526678">
   <script src="script.js?v=924ae5643e79" defer></script>
 </head>
 <body>
@@ -84,11 +84,10 @@
     <section class="section" id="method" data-active-step="retrieval">
       <div class="container">
         <h2>Method</h2>
-        <p class="section-intro">BPC retrieves demonstration segments, combines their future actions, and applies a residual correction at each control step.</p>
+        <p class="section-intro">BPC retrieves demonstration segments, combines their future actions, and applies a residual correction.</p>
         <figure class="method-figure">
           <div class="method-diagram" role="group" aria-label="Interactive BPC method diagram">
-            <img src="assets/method-slide.png?v=0259b15d6887" srcset="assets/method-slide.png?v=0259b15d6887 1920w, assets/method-slide@2x.png?v=456af7c6d026 3840w" sizes="(max-width: 520px) calc(100vw - 26px), (max-width: 1280px) calc(100vw - 56px), 1224px" alt="BPC method diagram: retrieve demonstration segments using images, proprioception, and past actions; combine their future actions; and add a residual correction using pooled random Fourier features." width="1920" height="1080" loading="lazy">
-            <div class="method-diagram-title" aria-hidden="true"><img src="assets/method-slide.png?v=0259b15d6887" srcset="assets/method-slide.png?v=0259b15d6887 1920w, assets/method-slide@2x.png?v=456af7c6d026 3840w" sizes="(max-width: 520px) calc(100vw - 26px), (max-width: 1280px) calc(100vw - 56px), 1224px" alt="" width="1920" height="1080" loading="lazy"></div>
+            <img src="assets/method-slide.png?v=0259b15d6887" srcset="assets/method-slide.png?v=0259b15d6887 1920w, assets/method-slide@2x.png?v=456af7c6d026 3840w" sizes="auto, 1560px" alt="BPC method diagram: retrieve demonstration segments using images, proprioception, and past actions; combine their future actions; and add a residual correction using pooled random Fourier features." width="1920" height="1080" loading="lazy">
             <svg class="method-highlights" viewBox="0 0 1920 1080" aria-hidden="true" focusable="false">
               <defs>
                 <filter id="method-area-glow" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="9"/></filter>
@@ -123,7 +122,6 @@
             <button type="button" class="method-hotspot" data-step="continuation" aria-label="Action continuation component" aria-controls="method-panel" aria-pressed="false"></button>
             <button type="button" class="method-hotspot" data-step="correction" aria-label="Learned correction component" aria-controls="method-panel" aria-pressed="false"></button>
           </div>
-          <!-- <figcaption>Hover or select a component to see its description. <a href="assets/method-slide@2x.png" target="_blank" rel="noopener" aria-label="Open the full-size method diagram">Full-size diagram</a> and <a href="https://arxiv.org/html/2609.30134v1#S4" target="_blank" rel="noopener">Method details</a></figcaption> -->
         </figure>
         <div class="method-tabs" role="tablist" aria-label="BPC method steps">
           <button role="tab" id="tab-retrieval" aria-selected="true" aria-controls="method-panel" tabindex="0" data-step="retrieval"><span>1</span> Retrieval</button>
@@ -162,7 +160,24 @@
             <figure><div class="demo-media"><img class="demo-animation" loading="lazy" src="assets/switch-bpc.jpg?v=62c67e1f166e" width="480" height="270" alt="BPC on the Switch task"><video class="demo-animation" width="480" height="270" poster="assets/switch-bpc.jpg?v=62c67e1f166e" data-src="assets/switch-bpc.mp4" preload="none" muted loop playsinline aria-hidden="true"></video></div><figcaption>BPC<span class="demo-result">34 of 40 trials succeeded</span></figcaption></figure>
             <figure><div class="demo-media"><img class="demo-animation" loading="lazy" src="assets/switch-pi05.jpg?v=f75d7422728d" width="480" height="270" alt="Pi 0.5 on the Switch task"><video class="demo-animation" width="480" height="270" poster="assets/switch-pi05.jpg?v=f75d7422728d" data-src="assets/switch-pi05.mp4" preload="none" muted loop playsinline aria-hidden="true"></video></div><figcaption>π<sub>0.5</sub><span class="demo-result">8 of 40 trials succeeded</span></figcaption></figure>
           </div>
-          <figure class="original-figure hardware-figure"><a href="assets/hardware-manipulation.png?v=2126cdf97ea0" target="_blank" rel="noopener" aria-label="Open the full-size hardware manipulation results"><img src="assets/hardware-manipulation.png?v=2126cdf97ea0" width="1690" height="1402" loading="lazy" alt="Coffee, Drawer, and Switch sequences. BPC succeeds in 36, 38, and 34 out of 40 trials, compared with 39, 40, and 8 for pi 0.5."></a><figcaption>Successes in 40 trials per task. BPC and π<sub>0.5</sub> use the same demonstrations.</figcaption></figure>
+          <div class="results-block">
+            <table class="results-table">
+              <caption>Hardware manipulation successes</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Task</th>
+                  <th scope="col">BPC</th>
+                  <th scope="col">π<sub>0.5</sub></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Coffee</th><td>36/40</td><td><strong>39/40</strong></td></tr>
+                <tr><th scope="row">Drawer</th><td>38/40</td><td><strong>40/40</strong></td></tr>
+                <tr><th scope="row">Switch</th><td><strong>34/40</strong></td><td>8/40</td></tr>
+              </tbody>
+            </table>
+            <p class="results-note">Both methods use the same demonstrations. <a href="assets/hardware-manipulation.png?v=2126cdf97ea0" target="_blank" rel="noopener">View the original task sequences</a>.</p>
+          </div>
         </div>
         <div class="experiment-subsection">
           <h3>Drone navigation</h3>
@@ -171,12 +186,94 @@
             <figure><div class="demo-media"><img class="demo-animation" loading="lazy" src="assets/drone-loop.jpg?v=9f8605bd7ab7" width="480" height="270" alt="BPC drone Loop flight"><video class="demo-animation" width="480" height="270" poster="assets/drone-loop.jpg?v=9f8605bd7ab7" data-src="assets/drone-loop.mp4" preload="none" muted loop playsinline aria-hidden="true"></video></div><figcaption>Loop (3 demonstrations)<span class="demo-result">10 of 10 flights succeeded</span></figcaption></figure>
             <figure><div class="demo-media"><img class="demo-animation" loading="lazy" src="assets/drone-figure-eight.jpg?v=0a612be705f8" width="360" height="202" alt="BPC drone Figure-eight flight"><video class="demo-animation" width="360" height="202" poster="assets/drone-figure-eight.jpg?v=0a612be705f8" data-src="assets/drone-figure-eight.mp4" preload="none" muted loop playsinline aria-hidden="true"></video></div><figcaption>Figure-eight (4 demonstrations)<span class="demo-result">8 of 10 flights succeeded</span></figcaption></figure>
           </div>
-          <figure class="original-figure"><a href="assets/drone-results.png?v=a0abe9dd3cea" target="_blank" rel="noopener" aria-label="Open the full-size drone results"><img src="assets/drone-results.png?v=a0abe9dd3cea" width="1678" height="404" loading="lazy" alt="Drone results. Loop: 10 of 10 successes, 0 collisions per metre, 0.095 metre demonstration-set distance, 3 demonstrations averaging 25.2 seconds. Figure-eight: 8 of 10 successes, 0.0108 collisions per metre, 0.109 metre distance, 4 demonstrations averaging 33.5 seconds."></a><figcaption>Results from 10 flights per task. See Table IV of the paper for the evaluation metrics.</figcaption></figure>
+          <div class="results-block">
+            <table class="results-table results-table-metrics">
+              <caption>Drone navigation on hardware</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Metric</th>
+                  <th scope="col">Loop</th>
+                  <th scope="col">Figure-eight</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Successful flights</th><td>10/10</td><td>8/10</td></tr>
+                <tr><th scope="row">Collisions per meter</th><td>0.0000</td><td>0.0108</td></tr>
+                <tr><th scope="row">Distance to demo set (m)</th><td>0.095</td><td>0.109</td></tr>
+                <tr><th scope="row">Demonstrations</th><td>3</td><td>4</td></tr>
+                <tr><th scope="row">Mean demo duration (s)</th><td>25.2</td><td>33.5</td></tr>
+              </tbody>
+            </table>
+            <p class="results-note">See Table IV of the paper for the evaluation metrics. <a href="assets/drone-results.png?v=a0abe9dd3cea" target="_blank" rel="noopener">View the original table</a>.</p>
+          </div>
         </div>
         <div class="experiment-subsection">
-          <h3>Simulation benchmarks</h3>
-          <figure class="original-figure"><a href="assets/simulation-tabletop.png?v=d9b33baf8d56" target="_blank" rel="noopener" aria-label="Open the full-size tabletop simulation results"><img src="assets/simulation-tabletop.png?v=d9b33baf8d56" width="1698" height="596" loading="lazy" alt="Simulation tabletop results across eight tasks, 300 rollouts per task. Mean success rates: SDP 76 percent, pi 0.5 77 percent, DARP 52 percent, BPC 73 percent."></a><figcaption>Tabletop manipulation (300 rollouts per task)</figcaption></figure>
-          <figure class="original-figure"><a href="assets/simulation-dexterous.png?v=0a7b6e6757d9" target="_blank" rel="noopener" aria-label="Open the full-size dexterous manipulation results"><img src="assets/simulation-dexterous.png?v=0a7b6e6757d9" width="1150" height="428" loading="lazy" alt="DexArt and Adroit results, 120 rollouts per task. BPC-3D means are 63 percent on DexArt and 70 percent on Adroit, compared with 67 and 75 for SDP-3D, and 64 and 62 for DARP-3D."></a><figcaption>DexArt and Adroit (120 rollouts per task)</figcaption></figure>
+          <h3 id="simulation-benchmarks">Simulation benchmarks</h3>
+          <div class="results-block">
+            <table class="results-table">
+              <caption>Tabletop simulation success rate (%)</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Task</th>
+                  <th scope="col">SDP</th>
+                  <th scope="col">π<sub>0.5</sub></th>
+                  <th scope="col">DARP</th>
+                  <th scope="col">BPC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Square</th><td>74</td><td><strong>86</strong></td><td>73</td><td>73</td></tr>
+                <tr><th scope="row">Stack</th><td>99</td><td><strong>100</strong></td><td>80</td><td>96</td></tr>
+                <tr><th scope="row">Coffee</th><td>83</td><td>74</td><td>48</td><td><strong>96</strong></td></tr>
+                <tr><th scope="row">Hammer</th><td>98</td><td><strong>99</strong></td><td><strong>99</strong></td><td><strong>99</strong></td></tr>
+                <tr><th scope="row">Mug</th><td>70</td><td>68</td><td>40</td><td><strong>78</strong></td></tr>
+                <tr><th scope="row">Nut</th><td><strong>42</strong></td><td>31</td><td>2</td><td>13</td></tr>
+                <tr><th scope="row">Stack3</th><td>76</td><td><strong>85</strong></td><td>4</td><td>50</td></tr>
+                <tr><th scope="row">Thread</th><td>65</td><td>72</td><td>67</td><td><strong>77</strong></td></tr>
+                <tr><th scope="row">Mean</th><td>76</td><td><strong>77</strong></td><td>52</td><td>73</td></tr>
+              </tbody>
+            </table>
+            <p class="results-note">300 rollouts per task. <a href="assets/simulation-tabletop.png?v=d9b33baf8d56" target="_blank" rel="noopener">View the original table and task images</a>.</p>
+          </div>
+          <div class="results-block">
+            <div class="results-pair">
+              <table class="results-table">
+                <caption>DexArt success rate (%)</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Task</th>
+                    <th scope="col">SDP-3D</th>
+                    <th scope="col">DARP-3D</th>
+                    <th scope="col">BPC-3D</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Toilet</th><td>75</td><td><strong>81</strong></td><td>78</td></tr>
+                  <tr><th scope="row">Faucet</th><td>43</td><td>43</td><td><strong>48</strong></td></tr>
+                  <tr><th scope="row">Laptop</th><td><strong>82</strong></td><td>69</td><td>62</td></tr>
+                  <tr><th scope="row">Mean</th><td><strong>67</strong></td><td>64</td><td>63</td></tr>
+                </tbody>
+              </table>
+              <table class="results-table">
+                <caption>Adroit success rate (%)</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Task</th>
+                    <th scope="col">SDP-3D</th>
+                    <th scope="col">DARP-3D</th>
+                    <th scope="col">BPC-3D</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Door</th><td>70</td><td>97</td><td><strong>98</strong></td></tr>
+                  <tr><th scope="row">Hammer</th><td><strong>97</strong></td><td>59</td><td>84</td></tr>
+                  <tr><th scope="row">Pen</th><td><strong>58</strong></td><td>29</td><td>28</td></tr>
+                  <tr><th scope="row">Mean</th><td><strong>75</strong></td><td>62</td><td>70</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="results-note">120 rollouts per task. <a href="assets/simulation-dexterous.png?v=0a7b6e6757d9" target="_blank" rel="noopener">View the original tables and task images</a>.</p>
+          </div>
         </div>
         <div class="experiment-subsection">
           <h3>Fitting and inference cost</h3>
