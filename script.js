@@ -97,7 +97,7 @@ if ('IntersectionObserver' in window) {
   document.querySelectorAll('main > section[id]:not(#video)').forEach(section => observer.observe(section));
 }
 
-// Load and play only demos in view. Reduced motion keeps the still frames.
+// Buffer nearby demos, but play only those in view. Reduced motion keeps the stills.
 if ('IntersectionObserver' in window) {
   const demos = document.querySelectorAll('video.demo-animation');
   for (const video of demos) {
@@ -105,10 +105,23 @@ if ('IntersectionObserver' in window) {
     video.addEventListener('error', () => video.classList.remove('is-playing'));
   }
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const loadDemo = video => {
+    if (video.hasAttribute('src')) return;
+    video.preload = 'auto';
+    video.src = video.dataset.src;
+  };
+  const preloadObserver = new IntersectionObserver(entries => {
+    for (const { target: video, isIntersecting } of entries) {
+      if (isIntersecting && !reducedMotion.matches) {
+        loadDemo(video);
+        preloadObserver.unobserve(video);
+      }
+    }
+  }, { rootMargin: '200px 0px' });
   const demoObserver = new IntersectionObserver(entries => {
     for (const { target: video, isIntersecting } of entries) {
       if (isIntersecting && !reducedMotion.matches) {
-        if (!video.hasAttribute('src')) video.src = video.dataset.src;
+        loadDemo(video);
         video.play().catch(() => {});
       } else {
         video.pause();
@@ -117,12 +130,14 @@ if ('IntersectionObserver' in window) {
   });
 
   const updateDemos = () => {
+    preloadObserver.disconnect();
     demoObserver.disconnect();
     for (const video of demos) {
       if (reducedMotion.matches) {
         video.pause();
         video.classList.remove('is-playing');
       } else {
+        if (!video.hasAttribute('src')) preloadObserver.observe(video);
         demoObserver.observe(video);
       }
     }

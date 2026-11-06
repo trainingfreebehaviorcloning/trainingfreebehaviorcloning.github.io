@@ -32,10 +32,13 @@ and configure its DNS record. Keep absolute metadata URLs in `index.html`
 Figures and animations come from the authors' `ICRA_2027_Video.pptx` presentation.
 The original result/plot PNGs are unmodified. The fitting/inference figure uses
 a self-contained SVG to change its legend from “Training” to “Fitting” while
-preserving the original plot image and all data. The method diagram is a render
-of the original slide, with a 3840 × 2160 version for Retina displays. Demonstrations use muted inline MP4 loops at the original 10 frames per second.
-Videos load and play when visible. Still images appear while clips load and for
-visitors who request reduced motion. See `asset-provenance.json` for
+preserving the original plot image and all data. Its embedded legend font
+contains only the glyphs used in “Fitting.” The method diagram uses responsive
+WebP copies of the original slide render, including a lossless 3840 × 2160
+version for Retina displays. Demonstrations use muted inline MP4 loops at the
+original 10 frames per second. Videos start loading near the viewport and play
+when visible. WebP stills appear while clips load and for visitors who request
+reduced motion. See `asset-provenance.json` for
 the source asset mapping and verification details. The complete presentation video is
 excluded from the website. The hero uses the 19-second drone and
 15.6-second manipulation clips. Header gradients and site accents use the

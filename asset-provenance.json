@@ -126,8 +126,8 @@
     "source": "assets/computation-scaling.png",
     "source_sha256": "2952d5a00012e510792ac0480934bcdaa6c65d2dd838dfae4040b122875a0269",
     "conversion": "Original PNG embedded byte for byte; only the Training legend text is covered and relabeled Fitting with vector text. Plot data and geometry are unchanged.",
-    "font": "DejaVu Sans, embedded",
-    "sha256": "a0c005840721ce65504ab57dce6d8cd51b00341063def8703b8b3986069324d5"
+    "font": "DejaVu Sans, embedded subset for the Fitting label",
+    "sha256": "61252b2f6dc968b7647c1b557d06abc148946ab52cdea50c006394eb2212d03c"
   },
   {
     "file": "assets/coffee-web.gif",
@@ -216,64 +216,142 @@
   {
     "file": "assets/drone-loop.mp4",
     "source": "ICRA_2027_Video.pptx:ppt/media/image3.gif",
-    "conversion": "H.264, CRF 22, original frames and timing, even-dimension padding",
+    "conversion": "H.264, CRF 24, slow preset, even-dimension padding, original frames and timing, fast start",
     "source_duration_seconds": 19.0,
     "duration_seconds": 19.0,
     "frames": 190,
-    "sha256": "7b77085143a92082547eb5d53d418b77438db007908190036b779e5108aecb90"
+    "sha256": "f7ef4088607856831686835edd58489cacc73364c4455d0ee9b934f617bfc5ab"
   },
   {
     "file": "assets/drawer.mp4",
     "source": "ICRA_2027_Video.pptx:ppt/media/image4.gif",
-    "conversion": "H.264, CRF 22, original frames and timing, even-dimension padding",
+    "conversion": "H.264, CRF 24, slow preset, even-dimension padding, original frames and timing, fast start",
     "source_duration_seconds": 33.2,
     "duration_seconds": 33.2,
     "frames": 332,
-    "sha256": "54f7ac85f9dbd9809005f336c78f9c2479269c3a96ab7b917eff5c21b4cf495b"
+    "sha256": "fad487cf3ad2c5ac342a015f69534707ad36cbda5def06dbc96609f3ed55192a"
   },
   {
     "file": "assets/switch-bpc.mp4",
     "source": "ICRA_2027_Video.pptx:ppt/media/image5.gif",
-    "conversion": "H.264, CRF 22, original frames and timing, even-dimension padding",
+    "conversion": "H.264, CRF 24, slow preset, even-dimension padding, original frames and timing, fast start",
     "source_duration_seconds": 12.6,
     "duration_seconds": 12.6,
     "frames": 126,
-    "sha256": "e09d22c452ee648b98fe4a52e62cfe5713f72919f128cf5abe985dd36167ba9b"
+    "sha256": "cf6f69bce89b3c8ca734f53f0c0759dca743c96cb995da973afb3b17296b8e31"
   },
   {
     "file": "assets/coffee.mp4",
     "source": "ICRA_2027_Video.pptx:ppt/media/image6.gif",
-    "conversion": "H.264, CRF 22, original frames and timing, even-dimension padding",
+    "conversion": "H.264, CRF 24, slow preset, even-dimension padding, original frames and timing, fast start",
     "source_duration_seconds": 15.6,
     "duration_seconds": 15.6,
     "frames": 156,
-    "sha256": "3b4e07d72c1bc5e9ec32d64c0550d200f61a5c890784d3037ec924de6d74643d"
+    "sha256": "f2c117e406900011cfbc920d50d6f93817da589a8cd32bb12cf568ba642d5786"
   },
   {
     "file": "assets/drone-figure-eight.mp4",
     "source": "ICRA_2027_Video.pptx:ppt/media/image11.gif",
-    "conversion": "H.264, CRF 22, original frames and timing, even-dimension padding",
+    "conversion": "H.264, CRF 24, slow preset, even-dimension padding, original frames and timing, fast start",
     "source_duration_seconds": 102.0,
     "duration_seconds": 102.0,
     "frames": 1020,
-    "sha256": "84eb360772fc0618fd615356d50d6fc0ab83e9d9e43f2efe2da5400438de2230"
+    "sha256": "25f773b34175eb76d043b5bcd4f5fc4c9c1bedb5ff76041f91c966fefb743077"
   },
   {
     "file": "assets/data-attribution.mp4",
     "source": "ICRA_2027_Video.pptx:ppt/media/image18.gif",
-    "conversion": "H.264, CRF 22, original frames and timing, even-dimension padding",
+    "conversion": "H.264, CRF 26, slow preset, Lanczos resize to 1280 × 1120, original frames and timing, fast start",
     "source_duration_seconds": 40.4,
     "duration_seconds": 40.4,
     "frames": 404,
-    "sha256": "87a5ab7d5a42eeda23d77827c5f87307f921473921c3dcb4a1f07984629c60e9"
+    "sha256": "cca2cbbb93fa8ce4ebbf0bb1b893a9742f1c5a6cef2b4d35b0a6cf8a8d7f0272",
+    "width": 1280,
+    "height": 1120
   },
   {
     "file": "assets/switch-pi05.mp4",
     "source": "ICRA_2027_Video.pptx:ppt/media/image20.gif",
-    "conversion": "H.264, CRF 22, original frames and timing, even-dimension padding",
+    "conversion": "H.264, CRF 24, slow preset, even-dimension padding, original frames and timing, fast start",
     "source_duration_seconds": 20.9,
     "duration_seconds": 20.9,
     "frames": 209,
-    "sha256": "372188af5faafee9b1e3806db7f9759844674e31dfe04b9d2bfee7ec458aa410"
+    "sha256": "879dfe9a2364f24d1bf51f0481631c4f0779f2eaae940db9a4c169aa395e6e8c"
+  },
+  {
+    "file": "assets/coffee.webp",
+    "source": "assets/coffee.jpg",
+    "source_sha256": "fb8f7f4b1c2cd58e3b421378f8824ec8a0ce4070d025a2ebca1aade1efb8a4e6",
+    "conversion": "WebP, quality 82",
+    "sha256": "dff7e0913e806c4c47eb4e312c9b9efa470e703e4947b07568bb210b6c2c71e3"
+  },
+  {
+    "file": "assets/drone-loop.webp",
+    "source": "assets/drone-loop.jpg",
+    "source_sha256": "9f8605bd7ab7afcfee9c0f2c2c72180c52e91d6bc5141d9936417050c36fd088",
+    "conversion": "WebP, quality 82",
+    "sha256": "82adf5b639df0d03a58ddec43fb053c2e4c3a979b9beb97e55181ea7f01d770c"
+  },
+  {
+    "file": "assets/switch-bpc.webp",
+    "source": "assets/switch-bpc.jpg",
+    "source_sha256": "62c67e1f166e7c4ff5e6b6c3298f33109ea284ad346b64505970c655709bfe30",
+    "conversion": "WebP, quality 82",
+    "sha256": "15561070dc5f633ecccc23a82fc81303d71c81578de631582898536879ba35a6"
+  },
+  {
+    "file": "assets/switch-pi05.webp",
+    "source": "assets/switch-pi05.jpg",
+    "source_sha256": "f75d7422728d4ae2c09b0b07d6e9b901996dacb0eed819748481869f4414b007",
+    "conversion": "WebP, quality 82",
+    "sha256": "031ebd57b456e0ea7a9236bd7b031854b7b8da38ca167daafefa9824d45b474d"
+  },
+  {
+    "file": "assets/drawer.webp",
+    "source": "assets/drawer.jpg",
+    "source_sha256": "8c78f2da4a250ac84f0479858e5ab81a670c19310cea7a1e2e5a4086de0c0a11",
+    "conversion": "WebP, quality 82",
+    "sha256": "b35d24184d147d1f97b0dbe1de0bc352cb431f0f52bf0842c946d7822983f387"
+  },
+  {
+    "file": "assets/drone-figure-eight.webp",
+    "source": "assets/drone-figure-eight.jpg",
+    "source_sha256": "0a612be705f839d2e202ebd4be27a5e46ce64c5a1f44a5cbb75ff1bce9d04ec6",
+    "conversion": "WebP, quality 82",
+    "sha256": "10d024d2514d70a4c01280eedb09ce55e2794a70f31365e954e512112d4cb09d"
+  },
+  {
+    "file": "assets/data-attribution.webp",
+    "source": "assets/data-attribution.jpg",
+    "source_sha256": "5c0085669f63b21c61b34286a38104f6e241e47a96882a834d128f535c05f4c3",
+    "conversion": "WebP, quality 90",
+    "sha256": "331e33458294001667642ff7a6ab7c9f9c7846feff3c00c10e1a307635cc0ca3"
+  },
+  {
+    "file": "assets/method-slide-small.webp",
+    "source": "assets/method-slide.png",
+    "source_sha256": "0259b15d6887aa3eabfb052cd3d6853050d2b41baf59d86e862ba842963d361e",
+    "conversion": "Resized and encoded as lossless WebP",
+    "width": 960,
+    "height": 540,
+    "sha256": "8e545cb1a55f888ed13a4a84c31e1e8bb515c1b17e08c414d6ddb2578fea87c9"
+  },
+  {
+    "file": "assets/method-slide.webp",
+    "source": "assets/method-slide.png",
+    "source_sha256": "0259b15d6887aa3eabfb052cd3d6853050d2b41baf59d86e862ba842963d361e",
+    "conversion": "Lossless WebP, identical decoded pixels",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "824fb9488526e74fc067d1b18460c0fe42ed0ecb44d0f69a33622b8ab4a6b3ec"
+  },
+  {
+    "file": "assets/method-slide@2x.webp",
+    "source": "assets/method-slide@2x.png",
+    "source_sha256": "456af7c6d0268a732f28fdd63b10fb05c0921075fc036dbb45a778f5b51e200e",
+    "conversion": "Lossless WebP, identical decoded pixels",
+    "width": 3840,
+    "height": 2160,
+    "sha256": "cef8267e3dfde4be0c62c48655e48e2738822d968fba3be45745eb0333d6b8eb"
   }
 ]
