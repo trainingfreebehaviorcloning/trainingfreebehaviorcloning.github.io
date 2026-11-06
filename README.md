@@ -41,9 +41,10 @@ excluded from the website. The hero uses the 19-second drone and
 15.6-second manipulation clips. Header gradients and site accents use the
 PowerPoint colors documented in `palette-provenance.json`.
 
-The bank-edit case study uses matched saved-state visualizations from the
-research project's figure materials. Both runs succeed. The intervention excludes
-12 demonstrations while keeping the query, fitted modules, and normalizers fixed.
+The retained bank-edit stills, omitted from the page, come from matched
+saved-state visualizations in the research project's figure materials. Both runs
+succeed. The intervention excludes 12 demonstrations while keeping the query,
+fitted modules, and normalizers fixed.
 
 Author details, citation, and reported results follow arXiv:2609.30134v1. Research
 paper content is available under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).

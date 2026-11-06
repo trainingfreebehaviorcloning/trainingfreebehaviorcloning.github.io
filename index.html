@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://trainingfreebehaviorcloning.github.io/assets/method-slide.png">
   <link rel="canonical" href="https://trainingfreebehaviorcloning.github.io/">
   <link rel="icon" href="assets/favicon.svg?v=7c495b019fab" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=a68c132f9eea">
+  <link rel="stylesheet" href="styles.css?v=44ad5ca562e9">
   <script src="script.js?v=924ae5643e79" defer></script>
 </head>
 <body>
@@ -71,7 +71,6 @@
       <a href="#speed">Speed</a>
       <a href="#attribution">Attribution</a>
       <a href="#memory">Memory</a>
-      <a href="#editability">Editability</a>
       <a href="#experiments">Hardware</a>
       <a href="#simulation-benchmarks">Simulation</a>
       <a href="#bibtex">BibTeX</a>
@@ -82,7 +81,6 @@
         <h2>Abstract</h2>
         <p class="lead">Behavior Predictive Control (BPC) predicts actions from short segments of recorded demonstrations.</p>
         <!-- <p>At each control step, BPC retrieves observation–action histories similar to the robot’s current history. It fits coefficients to reconstruct that history and uses the same coefficients to combine the retrieved future actions. A fitted residual model corrects the prediction.</p> -->
-        <!-- <p>The retrieved segments and their coefficients identify the demonstrations used for each prediction. Editing the demonstration bank can change the policy’s behavior, as shown in the case study below.</p> -->
          <p>Neural behavior cloning compresses demonstrations into large models, making individual actions difficult to trace and policy updates costly. Retrieval policies retain access to demonstrations but struggle with mismatch between recorded and live behavior. We introduce Behavior Predictive Control (BPC), which synthesizes policies without end-to-end policy training by combining an action-aware retrieval metric, a Hankel-based action-continuation prior, and a closed-form one-step residual correction. Inspired by behavioral systems theory, BPC predicts future actions by blending stored observation-action data that best reconstructs the recent runtime observation--action history. Across simulated benchmarks and real-robot deployments, BPC is competitive with learned policies such as π0.5 (surpassing it in some cases), while reducing policy fitting from hours to seconds on consumer GPUs and supporting closed-loop control upwards of 75 Hz on a Jetson Orin Nano. The retrieved demonstration windows and their coefficients also provide an intrinsic estimate of task progress. Retaining demonstrations within the deployed policy makes its predictions traceable to supporting trajectories and enables behavior revision through the demonstration bank.</p>
         <p class="definition"><strong>“Training-free”</strong> means no costly end-to-end neural policy training or fine-tuning.</p>
         <!-- <a class="text-link" href="https://arxiv.org/abs/2609.30134" target="_blank" rel="noopener">Read the full abstract <svg class="icon"><use href="#icon-arrow"/></svg></a> -->
@@ -172,19 +170,7 @@
       </div>
     </section>
 
-    <section class="section" id="editability">
-      <div class="container">
-        <h2>Editability</h2>
-        <p class="section-intro">Removing demonstrations changes the predicted trajectory in the Square task.</p>
-        <div class="edit-pair">
-          <figure><div class="image-label"><span class="dot original"></span> Original demonstration bank</div><img src="assets/bank-original.png?v=2f357a8c626c" width="900" height="450" loading="lazy" alt="Original-bank continuation in the Square task, with the recorded nut path shown in green."></figure>
-          <figure><div class="image-label"><span class="dot edited"></span> Edited demonstration bank</div><img src="assets/bank-edited.png?v=86489808c513" width="900" height="450" loading="lazy" alt="Continuation after excluding demonstrations, with the new path shown in orange and original path dashed."></figure>
-        </div>
-        <p class="edit-description">We removed 12 demonstrations while keeping the query, fitted modules, and normalizers fixed. Both rollouts succeed. The images show the same simulation step and camera view.</p>
-      </div>
-    </section>
-
-    <section class="section tinted" id="experiments">
+    <section class="section" id="experiments">
       <div class="container">
         <h2>Hardware Experiments</h2>
         <p class="section-intro">We evaluate BPC on a tabletop manipulator and a drone.</p>
@@ -245,7 +231,7 @@
       </div>
     </section>
 
-    <section class="section" id="simulation-benchmarks">
+    <section class="section tinted" id="simulation-benchmarks">
       <div class="container">
         <h2>Simulation Experiments</h2>
         <div class="results-block">
@@ -316,7 +302,7 @@
       </div>
     </section>
 
-    <section class="section tinted citation-section" id="bibtex">
+    <section class="section citation-section" id="bibtex">
       <div class="reading-width">
         <div class="citation-heading"><h2>BibTeX</h2><button id="copy-citation" class="copy-button"><svg class="icon"><use href="#icon-copy"/></svg><span>Copy</span></button></div>
         <pre><code id="citation">@misc{adang2026trainingfreebehaviorcloning,
