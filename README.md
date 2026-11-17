@@ -52,9 +52,8 @@ fitted modules, and normalizers fixed.
 Author details, citation, and reported results follow arXiv:2609.30134v1. Research
 paper content is available under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
-The **Code** button refers to the research implementation and remains labelled
-"Coming soon" until a public implementation link is supplied. This repository
-contains the paper website.
+The **Code** button links to the research implementation at
+https://github.com/madang6/bpc. This repository contains the paper website.
 
 ## Design
 
